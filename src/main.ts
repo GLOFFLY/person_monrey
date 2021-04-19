@@ -4,10 +4,12 @@ import './registerServiceWorker';
 import router from './router';//相当于引入router/index.ts
 import store from './store';
 import Nav from '@/components/Nav.vue';
+import Layout from '@/components/Layout.vue';
 
 Vue.config.productionTip = false;
 
 Vue.component('Nav', Nav);//目前全局引用Nav比较好
+Vue.component('Layout', Layout);
 
 new Vue({
   router,
