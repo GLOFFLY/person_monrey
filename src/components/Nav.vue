@@ -40,5 +40,8 @@ nav {
       height: 32px;
     }
   }
+  > .item.selected{
+    color: red;//$color-highlight;
+  }
 }
 </style>
