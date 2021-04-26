@@ -58,11 +58,7 @@ export default class Money1 extends Vue {
   onRecordListChange() {
     recordListModel.save(this.recordList);
   }
-//新添的
-  @Watch('tagList')
-  onTagListChange() {
-    tagListModel.save();
-  }
+
 
 }
 </script>
