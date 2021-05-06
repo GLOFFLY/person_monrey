@@ -6,7 +6,7 @@
     <div class="notes">
       <FormItem field-name="备注"
                 placeholder="在这里输入备注"
-                @update:value="onUpdateNotes"
+                :value.sync="record.notes"
       />
     </div>
     <Tags @update:value="onUpdateTags"/>
@@ -26,13 +26,14 @@ import Tabs from '@/components/Tabs.vue';
 
 
 @Component({
-  components: {FormItem, Tags, NumberPad,Tabs},
+  components: {FormItem, Tags, NumberPad, Tabs},
 })
 export default class Money1 extends Vue {
 
   get recordList() {
     return this.$store.state.recordList;
   }
+
   recordTypeList = recordTypeList;
 
   record: RecordItem = {
@@ -47,12 +48,19 @@ export default class Money1 extends Vue {
     this.record.tags = value;
   }
 
-  onUpdateNotes(value: string) {
-    this.record.notes = value;
-  }
+  // onUpdateNotes(value: string) {
+  //   this.record.notes = value;
+  // }
 
   saveRecord() {
+    if (!this.record.tags || this.record.tags.length === 0) {
+      return window.alert('至少选择一个标签');
+    }
     this.$store.commit('createRecord', this.record);
+    if (this.$store.state.createRecordError === null) {
+      window.alert('已保存');
+      this.record.notes = '';
+    }
   }
 
 

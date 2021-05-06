@@ -35,10 +35,7 @@ export default class EditLabel extends Vue {
     this.$store.commit('fetchTags');
     this.$store.commit('setCurrentTag', id);
     if (!this.currentTag) {
-      console.log('no tag');
       this.$router.replace('/404');
-    }else {
-      console.log('has tag');
     }
   }
 
