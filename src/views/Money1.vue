@@ -36,6 +36,7 @@ export default class Money1 extends Vue {
 
   recordTypeList = recordTypeList;
 
+  // eslint-disable-next-line no-undef
   record: RecordItem = {
     tags: [], notes: '', type: '-', amount: 0
   };
@@ -48,9 +49,6 @@ export default class Money1 extends Vue {
     this.record.tags = value;
   }
 
-  // onUpdateNotes(value: string) {
-  //   this.record.notes = value;
-  // }
 
   saveRecord() {
     if (!this.record.tags || this.record.tags.length === 0) {
