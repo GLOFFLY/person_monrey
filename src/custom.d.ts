@@ -26,3 +26,4 @@ type RootState = {
   tagList: Tag[],
   currentTag?: Tag
 }
+

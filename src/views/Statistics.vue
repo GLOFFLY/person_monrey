@@ -32,6 +32,7 @@ import clone from '@/lib/clone';
   components: {Tabs},
 })
 export default class Statistics extends Vue {
+  // eslint-disable-next-line no-undef
   tagString(tags: Tag[]) {
     return tags.length === 0 ? '无' : tags.map(t => t.name).join('，');
   }
@@ -54,6 +55,7 @@ export default class Statistics extends Vue {
 
 
   get recordList() {
+    // eslint-disable-next-line no-undef
     return (this.$store.state as RootState).recordList;
   }
 
@@ -63,6 +65,7 @@ export default class Statistics extends Vue {
         .filter(r => r.type === this.type)
         .sort((a, b) => dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf());
     if (newList.length === 0) {return [];}
+    // eslint-disable-next-line no-undef
     type Result = { title: string, total?: number, items: RecordItem[] }[]
     const result: Result = [{title: dayjs(newList[0].createdAt).format('YYYY-MM-DD'), items: [newList[0]]}];
     for (let i = 1; i < newList.length; i++) {
