@@ -21,17 +21,20 @@ import {mixins} from 'vue-class-component';
 
 @Component
 export default class Tags extends mixins(TagHelper) {
-  selectedTags: string[] = [];
-
+  // selectedTags: string[] = [];
+  // eslint-disable-next-line no-undef
+  selectedTags: Tag[] = [];
   get tagList(){
-    return this.$store.state.tagList;
+    // eslint-disable-next-line no-undef
+    return this.$store.state.tagList as Tag[];
   }
 
   created() {
     this.$store.commit('fetchTags');
   }
 
-  toggle(tag: string) {
+  // eslint-disable-next-line no-undef
+  toggle(tag: Tag) {
     const index = this.selectedTags.indexOf(tag);
     if (index >= 0) {
       this.selectedTags.splice(index, 1);

@@ -45,7 +45,9 @@ export default class Money1 extends Vue {
     this.$store.commit('fetchRecords');
   }
 
-  onUpdateTags(value: string[]) {
+  // eslint-disable-next-line no-undef
+  onUpdateTags(value: Tag[]) {
+    console.log(value);
     this.record.tags = value;
   }
 
