@@ -1,3 +1,8 @@
+# 部署步骤
+## 先下载运行 serve
+npm install -g serve
+serve -s dist
+
 # monrey
 
 ## Project setup

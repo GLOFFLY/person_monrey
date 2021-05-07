@@ -53,7 +53,6 @@ export default class Statistics extends Vue {
     }
   }
 
-
   get recordList() {
     // eslint-disable-next-line no-undef
     return (this.$store.state as RootState).recordList;
