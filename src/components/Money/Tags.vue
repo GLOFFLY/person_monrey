@@ -21,7 +21,6 @@ import {mixins} from 'vue-class-component';
 
 @Component
 export default class Tags extends mixins(TagHelper) {
-  // selectedTags: string[] = [];
   // eslint-disable-next-line no-undef
   selectedTags: Tag[] = [];
   get tagList(){
